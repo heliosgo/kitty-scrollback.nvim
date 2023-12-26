@@ -19,11 +19,17 @@ return {
       }
     end,
     [prefix .. 'last_visited_cmd_output'] = function()
+      vim.o.termguicolors = true
+      vim.o.relativenumber = true
+      vim.o.wrap = true
+      vim.keymap.set('n', 'j', 'gj', { silent = true })
+      vim.keymap.set('n', 'k', 'gk', { silent = true })
       return {
         kitty_get_text = {
           extent = 'last_visited_cmd_output',
           ansi = true,
         },
+        restore_options = true,
       }
     end,
     [prefix .. 'checkhealth'] = function()
