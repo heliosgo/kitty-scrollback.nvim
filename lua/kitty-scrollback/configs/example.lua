@@ -312,10 +312,13 @@ return {
     end,
     [prefix .. 'restore_opts'] = function()
       vim.o.termguicolors = true
-      vim.o.number = true
       vim.o.wrap = true
+      vim.o.listchars = 'tab:»·,nbsp:+,trail:·,extends:→,precedes:←,eol:¬'
+      vim.o.columns = 1000
       vim.keymap.set('n', 'j', 'gj', { silent = true })
       vim.keymap.set('n', 'k', 'gk', { silent = true })
+      vim.keymap.set('v', 'j', 'gj', { silent = true })
+      vim.keymap.set('v', 'k', 'gk', { silent = true })
       return {
         restore_options = true,
       }
