@@ -313,6 +313,9 @@ return {
     [prefix .. 'restore_opts'] = function()
       vim.o.termguicolors = true
       vim.o.number = true
+      vim.o.wrap = true
+      vim.keymap.set('n', 'j', 'gj', { silent = true })
+      vim.keymap.set('n', 'k', 'gk', { silent = true })
       return {
         restore_options = true,
       }
